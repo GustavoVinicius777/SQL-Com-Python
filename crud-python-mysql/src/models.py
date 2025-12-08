@@ -5,6 +5,3 @@ class Cliente:
         self.email = email
         self.telefone = telefone
         self.data_criacao = data_criacao
-
-    def __repr__(self):
-        return f"Cliente(id={self.id}, nome='{self.nome}', email='{self.email}', telefone='{self.telefone}', data_criacao='{self.data_criacao}')"
