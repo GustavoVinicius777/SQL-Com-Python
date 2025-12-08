@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Clientes</h1>
+<a href="/add" class="btn btn-primary mb-3">Cadastrar novo</a>
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Ações</th>
+    </tr>
+
+    {% for c in clientes %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.nome }}</td>
+            <td>{{ c.email }}</td>
+            <td>{{ c.telefone }}</td>
+            <td>
+                <a href="/edit/{{ c.id }}" class="btn btn-warning btn-sm">Editar</a>
+                <a href="/delete/{{ c.id }}" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
